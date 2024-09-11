@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Story-Shelf/static/css/main.83f9807b.css",
+    "main.js": "/Story-Shelf/static/js/main.54290a01.js",
+    "static/js/787.c052daec.chunk.js": "/Story-Shelf/static/js/787.c052daec.chunk.js",
+    "static/media/Unow.png": "/Story-Shelf/static/media/Unow.db3abcbd88d874d8e96a.png",
+    "static/media/defaultProfilePic.jpg": "/Story-Shelf/static/media/defaultProfilePic.d3a17a61345dd0df381e.jpg",
+    "index.html": "/Story-Shelf/index.html",
+    "main.83f9807b.css.map": "/Story-Shelf/static/css/main.83f9807b.css.map",
+    "main.54290a01.js.map": "/Story-Shelf/static/js/main.54290a01.js.map",
+    "787.c052daec.chunk.js.map": "/Story-Shelf/static/js/787.c052daec.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83f9807b.css",
+    "static/js/main.54290a01.js"
+  ]
+}

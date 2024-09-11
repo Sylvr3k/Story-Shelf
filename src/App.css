@@ -1,0 +1,817 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+/*Styling the whole body*/
+body{
+  background-color: rgb(22, 22, 22);
+}
+/*Styling the navbars*/
+nav{
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: fixed;
+ }
+/*Styling Links*/
+a{
+  text-decoration: none;
+  color: #000;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+/*Styling individually the button in the grace div*/
+.grace button{
+  border: none;
+  background-color: #5db8f5;
+  padding: 12px;
+  margin-top: 12px;
+  width: 150px;
+  height: 60px;
+  border-radius: 2px;
+  font-weight: 400;
+  font-size: 16px;
+  transition: 0.5s;
+}
+/*The text infront of the icon in the navbar*/
+#Saletxt{
+  font-family: 'Gugi Regular';
+  padding-top: 30px;
+}
+/*All the H1 tags*/
+h1{
+  font-family: 'Poppins', sans-serif;
+  font-size: 70px;
+  color: #000;
+  text-align: center;
+}
+/*Heading Section One 'Welcome to Sale Sphere' in the home page*/
+.HeadOne{
+  background-image: url('./images/Unow.png'); 
+  background-size: cover;
+  background-position-y: -0.2cm;
+  min-height: 90vh;
+  padding-top: 140px;
+}
+/*The "NoResults" head in Cart*/
+.HeadMo{
+  background-color: #fff; 
+  background-size: cover;
+  background-position-y: -0.2cm;
+  min-height: 90vh;
+  padding-top: 140px;
+}
+/*The paragraph in the HeadOne div*/
+.HeadOne p{
+  text-align: center;
+  color: #555; 
+  font-size: 20px;
+  padding-right: 80px;
+  padding-left: 80px;
+}
+/*The Middle Section in the Home Page*/
+.MiddleOne{
+  background-color: rgb(25, 25, 25);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+/*The Div in the Middle Section in the home pag*/
+.Guard{
+  padding-top: 40px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 80px; 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+/*Styling the h1 tag in the Guard div*/
+.Guard h1{
+  text-align: center;
+  color: #fff;
+  font-size: 32px;
+  padding-top: 30px;
+  font-family: 'Century Gothic';
+}
+/*Styling the paragraph tag in the div Guard*/
+.Guard p{
+  text-align: center;
+  color: #888;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/*The Middle Section's button*/
+button{
+  border: none;
+  background-color: #5db8f5;
+  padding: 12px;
+  margin-top: 12px;
+  width: 90px;
+  min-height: 50px;
+  border-radius: 2px;
+  font-weight: 400;
+  font-size: 16px;
+  transition: 0.5s;
+}
+
+/*Hovering the button "Shop" in the Home page*/
+.Guard button:hover{
+  background-color: #5db8f5b6;
+}
+
+/*The Words next to the button "Shop" in the Home page*/
+#btnext{
+  color: #fff;
+  font-weight: 500;
+  font-size: 13px;
+  padding-left: 35px;
+  padding-top: 27px;
+  word-spacing: -2px;
+}
+/*The words that are next to the button in the Guard Div*/
+#btnext2{
+  color: #000;
+  font-weight: 500;
+  font-size: 13px;
+  padding-left: 35px;
+  padding-top: 27px;
+  word-spacing: -2px; 
+}
+/*The div that contains the button and the words*/
+.grace{
+  display: flex;
+  flex-direction: row;
+}
+/*The CSS for the footer*/
+footer {
+  background-color: rgb(20, 20, 20);
+  color: #fff;
+  padding: 20px 0;
+  padding-top: 40px;
+  text-align: center;
+}
+/*Every h3 tag in the footer*/
+footer h3{
+  padding-bottom: 20px;
+  font-family: 'Century Gothic';
+}
+/*The div containing most of the footer except the lowest section of the footer*/
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+/*All the divs in the footer-cointainer*/
+.footer-container div {
+  margin: 20px;
+  max-width: 200px;
+}
+/*The about ,link and contact section of the footer*/
+.footer-about,
+.footer-links,
+.footer-contact {
+  text-align: left;
+}
+/*All the paragraphs in these two divs*/
+.footer-about p,
+.footer-contact p {
+  line-height: 1.6;
+  color: #888;
+  font-size: 18.5px;
+}
+/*The links in the Quick Links Section*/
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  font-size: 18.5px;
+}
+/*All the li tags in the ul tag*/
+.footer-links li {
+  margin: 10px 0;
+}
+/*All the links in the footer-links div*/
+.footer-links a {
+  color: #888;
+  text-decoration: none;
+  padding: 0;
+}
+/*All the links in the shape of social network icons*/
+.footer-social a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.5em;
+  text-decoration: none;
+  transition: 1s;
+}
+/*An effect when the mouse hovers over the social network icons*/
+.footer-social a:hover {
+  color: rgb(205, 205, 205);
+}
+/*The very bottom of the footer*/
+.footer-bottom {
+  margin-top: 10px;
+  border-top: 1px solid #444;
+  padding-top: 35px;
+  font-size: 18px;
+  font-family: 'Century Gothic';
+}
+/*The text cointaining the current year and the name of the website in the footer*/
+.Copyright{
+  font-size: 18px;
+}
+/*The div containing the icons in the footer*/
+.Icons{
+  display: flex;
+  font-size: 22px;
+  color: #888;
+}
+/*All the icons in the Icons Div*/
+.Icons i{
+  padding-left: 10px;
+}
+/*The CSS for the main section in the shop page*/
+.Body{
+  background-color: #fff;
+  padding: 5px 15px 15px 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+/*The CSS for the card in the shop page*/
+.card{
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+/*The whole form in the Sign page*/
+.FormSign{
+  background-color: #fff;
+  padding: 55px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+  border-radius: 8px;
+  margin-top: -40px;
+  width: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/*The Whole Form in the Log In page*/
+.FormLog{
+  background-color: #fff;
+  padding: 55px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+  border-radius: 8px;
+  width: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/*Div for the Select tag*/
+.form-group {
+  margin-bottom: 20px;
+  color: #333;
+}
+/*Password and Email and the first name and last name fields in the Log In page and Sign Up page*/
+.form-control {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: 0;
+}
+/*the option tag in the Sign Up Page*/
+.form-control option[id="Select"]{
+  color: #777;
+}
+/*The outer part of the form in the Log In page*/
+.OuterForm2{
+  display: flex;
+  justify-content: center;
+  margin-top: 7%;
+}
+/*The outer part of the form in Sign Up page*/
+.OuterForm{
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+/*The Id of the link and "Already have an account?" part*/
+#btnext3{
+  display: flex;
+  justify-content: center;
+  color: #000;
+  font-weight: 400;
+  font-size: 13px;
+  padding-left: 35px;
+  padding-top: 27px;
+  word-spacing: -2px;
+}
+/*The link in the id tag "btnext3"*/
+#btnext3 a{
+  color: #555;
+}
+/*The div of the button and "Already have an account?/Don't have an account?" part*/
+.Inline{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/*The styling of the button in the Inline div in both the Sign Up page and Log In page*/
+.Inline button{
+  color: #fff;
+  transition: 1s;
+}
+/*The hovering of the submit button in both the Sign Up page and Log In page*/
+.Inline button:hover{
+  background-color: #4e9ed3;
+}
+/*The Title above the forms in both the Sign Up and Log In page*/
+.Picon{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+  font-family: 'Century Gothic';
+  font-size: 30px;
+}
+/*The Email and Password field in the Sign Up page*/
+.EmandPas{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+/*Styling the Password field in the Sign Up page*/
+.EmandPas input[type="password"]{
+  padding: 15px;
+  border: none;
+}
+/*Styling the E-mail field in the Sign Up page*/
+.EmandPas input[type="Email"]{
+  padding: 15px;
+  border: none;
+}
+/*Styling the date div*/
+.date{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+/*Styling the date input*/
+.date input[type="date"]{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #444;
+  outline: 0;
+  font-family: 'Century Gothic';
+  font-size: 16px;
+  width: 150%;
+}
+/*The div used to show an error*/
+.Jaype{
+  display: flex;
+  justify-content: center;
+}
+/*The paragraph used to show the error*/
+#jaypara{
+  font-size: 12px;
+}
+/*The links in the Icons div*/
+.Icons a{
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+/*The section in place of the profile pic to be shown*/
+.Profile{
+  background-image: url('./images/Unow.png'); 
+  background-size: cover;
+  background-position-y: -0.2cm;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+/*The div with the profile picture*/
+.profile-picture-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/**/
+.profile-picture-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+}
+
+.profile-picture-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-picture-preview .placeholder {
+  color: #aaa;
+}
+.upload-container input[type="file"] {
+    display: none;
+}
+.upload-container label {
+    display: inline-block;
+    background-color: #4e9ed3;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 1s;
+    font-size: 16px;
+}
+.upload-container label:hover{
+  background-color: #4286b3;
+}
+.upload-container img {
+  display: block;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+}
+.Bear button{
+  background-color: #4e9ed3;
+  color: #fff;
+  transition: 1s;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.Bear button:hover{
+  background-color: #4286b3;
+}
+.FormProfile{
+  margin-top: 10px;
+}
+.Profile .Inline{
+  margin-top: 20px;
+}
+
+.Profile label{
+  font-family: 'Century Gothic';
+  padding-bottom: 5px;
+}
+
+.Inline .form-group input[type="text"]{
+  padding-bottom: 15px;
+}
+.HWT{
+  padding-top: 5px;
+}
+.HWT .form-group{
+  padding-top: 10px;
+}
+.HWT .date{
+  padding-top: 10px;
+}
+.HWT input[type="text"]{
+  background-color: rgba(255, 255, 255, 0.411);
+  color: #999;
+  padding-bottom: 20px;
+  border-radius: 0px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1.9px rgb(227, 227, 227) solid;
+}
+.HWT input[type="date"]{
+  background-color: rgba(255, 255, 255, 0.411);
+  color: #999;
+  width: 90%;
+  border-radius: 0px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1.9px rgb(227, 227, 227) solid;
+}
+.HWT select{
+  background-color: rgba(255, 255, 255, 0.411);
+  color: #999;
+  border-radius: 0px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1.9px rgb(227, 227, 227) solid;
+}
+.BearH{
+  display: flex;
+  justify-content: center;
+}
+.Add input[type="text"]{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+a[href="/Home"], a[href="/Cart"], a[href="/Shop"]{
+  padding-top: 18px;
+}
+.bash{
+  margin-left: 30px;
+}
+.bash a{
+  font-size: 18px;
+  color: #111;
+  font-family: 'Century Gothic';
+}
+.S-Icon{
+  margin-top: -15px;
+}
+.CartList{
+  background-color: #fff; 
+  background-size: cover;
+  background-position-y: -0.2cm;
+  min-height: 90vh;
+}
+/*The div for the checkout button in the Cart*/
+.Btn-Kiddo{
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 40px;
+}
+/*The checkout button in the Cart*/
+.Btn-Kiddo button{
+  background-color: rgb(106, 0, 0);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: 'Century Gothic';
+  color: #fff;
+  width: 98%;
+}
+.CartList{
+  list-style: none;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-bottom: 0;
+}
+/*All the li tags in the CartList ul tag*/
+.CartList li{
+  background-color: rgba(223, 222, 222, 0.363);
+  color: rgb(20, 20, 20);
+  border: 1px #d2d2d2 solid;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  padding-top: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  transition: 1s;
+}
+/*The remove button in the CartList div*/
+.CartList button{
+  background-color: rgb(168, 0, 0);
+  margin-top: 0px;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Century Gothic';
+  border-radius: 5px;
+}
+/*The strong tag in the Cartlist div*/
+.CartList strong{
+  padding-top: 10px;
+  padding-left: 20px;
+  font-family: 'Century Gothic';
+  padding-right: '-20px';
+}
+/*All the span tags in the CartList class*/
+.CartList span{
+  padding-top:20px;
+  padding-left: 15px;
+  padding: 5px;
+  font-weight: 100;
+}
+/*A class in the Cart*/
+.bashden{
+  display: flex;
+  justify-content: space-between;
+}
+/*The section of the Card where the price Is*/
+.card-mash{
+  color: rgb(193, 193, 193);
+  font-family: 'Century Gothic';
+}
+/*Adding responsive designs in most of the widths compatible with most devices*/
+@media(max-width: 945px){
+  .FormLog{
+     width: 75%;
+  }
+  .FormSign{
+    width: 75%;
+  }
+}
+@media(max-width: 745px){
+  .FormLog{
+     width: 85%;
+  }
+  .FormSign{
+    width: 85%;
+  }
+  .CartList{
+    padding-left: 2px;
+  }
+  .CartList li{
+    color: rgb(20, 20, 20);
+    border: 1px #d2d2d2 solid;
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+  }
+}
+@media(max-width: 625px){
+   .Body{
+   padding-left: 20%;
+   }  
+}
+@media (max-width: 601px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+  .footer-links li{
+    display: flex;
+    justify-content: center;
+  }
+    .footer-links a[href="/Profile"]{
+    padding-top: 15px;
+  }
+  .footer-links a[href="/Profile"]{
+    padding-top: 18px;
+  }
+  .footer-links{
+    width: 400px;
+  }
+  .footer-links ul{
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer-links h3{
+    margin-bottom: -10px;
+  }
+  .footer-links li{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+  }
+}
+@media (max-width: 576px) {
+  .bashThree{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(223, 222, 222, 0.064);
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 16px;
+  }
+  .bashTwo{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(223, 222, 222, 0.224);
+    padding-left: 10px;
+    font-size: 16px;
+  }
+  .bashOne{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(223, 222, 222, 0.381);
+    padding-left: 10px;
+    font-size: 16px;
+  }
+  .bash{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(223, 222, 222, 0.6);
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    margin-left: 0;
+  }
+  .footer-links a[href="/Profile"]{
+    padding-top: 18px;
+  }
+  .footer-links{
+    width: 400px;
+  }
+  .footer-links ul{
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer-links h3{
+    margin-bottom: -10px;
+  }
+  .footer-links li{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+  }
+}
+@media(max-width: 545px){
+  .OuterForm2{
+    margin-top: 70px;
+  }
+  .FormLog{
+    width: 95%;
+    padding-top: 50px;
+    min-height: 360px;
+    border-radius: 0;
+  }
+  .OuterForm{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .FormSign{
+    width: 98%;
+    padding-top: 100px;
+    min-height: 360px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+  }
+  .footer-links{
+    width: 400px;
+  }
+  .footer-links h3{
+    margin-bottom: -10px;
+  }
+  .footer-links ul{
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer-links li{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+  }
+  .footer-links a[href="/Profile"]{
+    padding-top: 18px;
+  }
+  .footer-social h3{
+    margin-bottom: -15px;
+  }
+  .footer-social{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .HeadOne p{
+    padding-bottom: 50px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}

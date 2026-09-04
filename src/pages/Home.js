@@ -20,7 +20,7 @@ function Home(props) {
                     <h1>{props.headtwo}</h1>
                     <p>{props.headtwopara}</p>
                     <div className="grace">
-                        <button><Link to="/shop"><font color="white">{props.btn}</font></Link></button>
+                        <Link to="/shop">{props.btn}</Link>
                         <p id="btnext">{props.midscript}</p>
                     </div>
                 </div>

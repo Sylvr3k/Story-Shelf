@@ -9,6 +9,7 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       const token = localStorage.getItem('token');
+
       if (!token) {
         setLoading(false);
         return;
@@ -18,7 +19,7 @@ export const UserProvider = ({ children }) => {
         const response = await fetch('http://localhost:5009/user/profile', {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${token}`,
+            Authorization: `Bearer ${token}`,
           },
         });
 
@@ -27,9 +28,13 @@ export const UserProvider = ({ children }) => {
           setUser(data);
         } else {
           console.error('Failed to fetch user details');
+
+          // 🔥 REMOVE BAD TOKEN
+          localStorage.removeItem('token');
+          setUser(null);
         }
       } catch (error) {
-          console.error('Error fetching user details:', error);
+        console.error('Error fetching user details:', error);
       } finally {
         setLoading(false);
       }

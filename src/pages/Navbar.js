@@ -10,7 +10,7 @@ function Navbar() {
   return (
     // The Beginning of the nav-bar
     <nav className="navbar navbar-expand-sm navbar-light" id="navbar">
-      <div className="container d-flex">
+      <div className="container">
         <Link to="/Home" className="S-Icon navbar-brand">
           <img src="letter-s lighter1.png" height="30px" width="30px" alt="Logo" />
         </Link>
@@ -33,6 +33,11 @@ function Navbar() {
             <li className="bashOne nav-item">
               <Link to="/Shop" className="nav-link mx-2" activeClassName="active">
                 Shop
+              </Link>
+            </li>
+            <li className="bashZero nav-item">
+              <Link id="adminlink" to="/AdminHub" className="nav-link" activeClassName="active">
+                Admin Hub
               </Link>
             </li>
             {user && (

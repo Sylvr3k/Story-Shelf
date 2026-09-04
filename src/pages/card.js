@@ -1,7 +1,7 @@
 import React from "react";
 
 // The card used to make the book sales in the shop component
-const Card = ({ pic, title, para, price, children }) => {
+const Card = ({ pic, title, para, price, seller, children }) => {
      return(
          <>
         <div className="card" style={{width: '18rem'}}>
@@ -9,7 +9,7 @@ const Card = ({ pic, title, para, price, children }) => {
              <div className="card-body">
                <h5 className="card-title">{title}</h5>
                <p className="card-text">{para}</p>
-               <p className="card-mash">{price}</p>
+               <p className="card-mash">{price} USD</p>
                {children}
              </div>
         </div>

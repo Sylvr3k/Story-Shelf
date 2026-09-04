@@ -123,7 +123,7 @@ function Profile() {
               {preview ? (
                 <img src={preview} alt="Profile Preview" />
               ) : (
-                <div className="placeholder">No Image</div>
+                <div className="placeholder">No Image!</div>
               )}
             </div>
             <div className="upload-container">

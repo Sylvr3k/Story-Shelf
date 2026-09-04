@@ -31,6 +31,16 @@
 body{
   background-color: rgb(22, 22, 22);
 }
+
+font{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  margin: 10px;
+}
+
+input[name="address"]{
+  width: 50%;
+}
 /*Styling the navbars*/
 nav{
   background-color: #fff;
@@ -48,17 +58,23 @@ a{
   padding-right: 30px;
 }
 /*Styling individually the button in the grace div*/
-.grace button{
+.grace a{
   border: none;
   background-color: #5db8f5;
+  color: #fff; 
   padding: 12px;
   margin-top: 12px;
   width: 150px;
-  height: 60px;
-  border-radius: 2px;
+  height: 50px;
+  border-radius: 5px;
   font-weight: 400;
   font-size: 16px;
-  transition: 0.5s;
+  transition: 0.2s;
+}
+
+.grace a:hover{
+  background-color: #fff;
+  color: #5db8f5; 
 }
 /*The text infront of the icon in the navbar*/
 #Saletxt{
@@ -82,11 +98,22 @@ h1{
 }
 /*The "NoResults" head in Cart*/
 .HeadMo{
-  background-color: #fff; 
-  background-size: cover;
+  background-color:  #f4f3f356; 
+  border: 1px #dddddf solid;
+  border-radius: 15px;
   background-position-y: -0.2cm;
-  min-height: 90vh;
-  padding-top: 140px;
+  margin-top: 150px;
+  margin-left: 200px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  width: 650px;
+}
+.HeadMost{
+    background-color: #fff; 
+    background-size: cover;
+    background-position-y: -0.2cm;
+    min-height: 90vh;
+    padding-top: 140px;
 }
 /*The paragraph in the HeadOne div*/
 .HeadOne p{
@@ -131,23 +158,24 @@ h1{
   padding-left: 15px;
   padding-right: 15px;
 }
-/*The Middle Section's button*/
+/*The Middle Section's button and some other buttons*/
 button{
   border: none;
   background-color: #5db8f5;
+  color: #fff;
   padding: 12px;
   margin-top: 12px;
   width: 90px;
   min-height: 50px;
-  border-radius: 2px;
   font-weight: 400;
   font-size: 16px;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 /*Hovering the button "Shop" in the Home page*/
 .Guard button:hover{
-  background-color: #5db8f5b6;
+  background-color: #fff;
+  color: #5db8f5 !important;
 }
 
 /*The Words next to the button "Shop" in the Home page*/
@@ -263,7 +291,6 @@ footer h3{
 /*The CSS for the main section in the shop page*/
 .Body{
   background-color: #fff;
-  padding: 5px 15px 15px 15px;
   margin-bottom: 15px;
   display: flex;
   flex-direction: row;
@@ -303,6 +330,7 @@ footer h3{
 .form-group {
   margin-bottom: 20px;
   color: #333;
+  justify-content: space-between;
 }
 /*Password and Email and the first name and last name fields in the Log In page and Sign Up page*/
 .form-control {
@@ -316,6 +344,11 @@ footer h3{
 /*the option tag in the Sign Up Page*/
 .form-control option[id="Select"]{
   color: #777;
+  margin-top: 45px;
+}
+.PhoneClass{
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 /*The outer part of the form in the Log In page*/
 .OuterForm2{
@@ -323,6 +356,11 @@ footer h3{
   justify-content: center;
   margin-top: 7%;
 }
+
+.OuterForm2 input[placeholder="Confirm password"]{
+  margin-top: 10px;
+}
+
 /*The outer part of the form in Sign Up page*/
 .OuterForm{
   display: flex;
@@ -353,12 +391,32 @@ footer h3{
 }
 /*The styling of the button in the Inline div in both the Sign Up page and Log In page*/
 .Inline button{
-  color: #fff;
-  transition: 1s;
+  background-color: #fff;
+  color: #5db8f5 !important;
+  border: 1.5px #5db8f5 solid;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: 0.2s;
+  padding: 0;
+}
+.Inlines button{
+  background-color: #fff;
+  color: #5db8f5 !important;
+  border: 1.5px #5db8f5 solid;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: 0.2s;
+  padding: 0;
+  width: 100%;
 }
 /*The hovering of the submit button in both the Sign Up page and Log In page*/
 .Inline button:hover{
-  background-color: #4e9ed3;
+  background-color: #5db8f5;
+  color:#fff !important; 
+}
+.Inlines button:hover{
+  background-color: #5db8f5;
+  color:#fff !important; 
 }
 /*The Title above the forms in both the Sign Up and Log In page*/
 .Picon{
@@ -379,8 +437,7 @@ footer h3{
   padding: 15px;
   border: none;
 }
-/*Styling the E-mail field in the Sign Up page*/
-.EmandPas input[type="Email"]{
+.EmandPas input[type="text"]{
   padding: 15px;
   border: none;
 }
@@ -404,6 +461,21 @@ footer h3{
   font-size: 16px;
   width: 150%;
 }
+
+.date input[type="text"]{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #444;
+  outline: 0;
+  font-family: 'Century Gothic';
+  font-size: 16px;
+  width: 150%;
+}
+
 /*The div used to show an error*/
 .Jaype{
   display: flex;
@@ -448,6 +520,17 @@ footer h3{
   margin-bottom: 10px;
 }
 
+.UserClass{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.UserClass input[type="text"]{
+  width: 50%;
+}
+
 .profile-picture-preview img {
   width: 100%;
   height: 100%;
@@ -462,16 +545,17 @@ footer h3{
 }
 .upload-container label {
     display: inline-block;
-    background-color: #4e9ed3;
+    background-color: #5db8f5;
     color: white;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
-    transition: 1s;
+    transition: 0.2s;
     font-size: 16px;
 }
 .upload-container label:hover{
-  background-color: #4286b3;
+  background-color: #fff;
+  color: #5db8f5;
 }
 .upload-container img {
   display: block;
@@ -481,15 +565,18 @@ footer h3{
   margin: 20px auto;
 }
 .Bear button{
-  background-color: #4e9ed3;
-  color: #fff;
-  transition: 1s;
+  background-color: #fff;
+  color: #5db8f5;
+  border: 1.5px #5db8f5 solid;
+  transition: 0.2s;
   width: 100%;
   margin-top: 15px;
+  border-radius: 5px;
   margin-bottom: 10px;
 }
 .Bear button:hover{
-  background-color: #4286b3;
+  background-color: #5db8f5;
+  color: #fff;
 }
 .FormProfile{
   margin-top: 10px;
@@ -544,6 +631,11 @@ footer h3{
   border-right: 0px;
   border-bottom: 1.9px rgb(227, 227, 227) solid;
 }
+
+.HWT input[name="address"]{
+  width: 100%;
+}
+
 .BearH{
   display: flex;
   justify-content: center;
@@ -552,7 +644,7 @@ footer h3{
   padding-top: 15px;
   padding-bottom: 15px;
 }
-a[href="/Home"], a[href="/Cart"], a[href="/Shop"]{
+a[href="/Home"], a[href="/Cart"], a[href="/Shop"], a[href="/Dashboard"]{
   padding-top: 18px;
 }
 .bash{
@@ -562,6 +654,9 @@ a[href="/Home"], a[href="/Cart"], a[href="/Shop"]{
   font-size: 18px;
   color: #111;
   font-family: 'Century Gothic';
+}
+.bashZero{
+  margin-left: 35px;
 }
 .S-Icon{
   margin-top: -15px;
@@ -585,7 +680,7 @@ a[href="/Home"], a[href="/Cart"], a[href="/Shop"]{
   background-color: rgb(106, 0, 0);
   padding-top: 30px;
   padding-bottom: 30px;
-  border-radius: 3px;
+  border-radius: 5px;
   font-size: 16px;
   font-family: 'Century Gothic';
   color: #fff;
@@ -644,12 +739,544 @@ a[href="/Home"], a[href="/Cart"], a[href="/Shop"]{
   font-family: 'Century Gothic';
 }
 /*Adding responsive designs in most of the widths compatible with most devices*/
+.KO{
+  display: flex;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.KO ul{
+  list-style: none;
+}
+
+.Mother{
+  display: flex;
+  background-color: #141414;
+  min-height: 100vh; 
+}
+
+.Sidebar{
+  position: fixed;
+  width: 16rem;           
+  background-color: #141414;   
+  color: white;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.Daughter{
+  width: 16rem;          
+  background-color: white; 
+  color: black;
+  padding: 2rem;
+  box-sizing: border-box;  
+  display: flex;
+  margin-left: 250px;
+  flex-direction: column;
+  width: 500px;
+}
+
+.GrandDaughter{
+  display: flex;
+  width: 16rem;          
+  background-color: white; 
+  color: black;
+  padding: 2rem;
+  box-sizing: border-box;  
+  margin-left: 250px;
+  width: 1200px;
+}
+
+.Vertible{
+  width: 350px;
+  margin-right: -100px;
+  margin-left: 30px;
+}
+
+.Convertible{
+  display: flex;
+  width: 950px;
+}
+
+
+.Preview{
+  border: 0.5px #dddddf solid;
+  border-radius: 5px;
+  background-color: #f4f3f356;
+  height: 436px;
+  width: 515px;
+  margin: 15px 0px 20px 30px;
+}
+
+.Preview ul{
+  display: flex;
+  flex-wrap: wrap;
+  position: static;
+  padding-left: 5px;
+}
+
+.Preview a{
+  height: 0 !important;
+  width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.Preview li{
+  margin: 2px; 
+}
+
+.Daughter table{
+  width: 900px; 
+}
+
+.Daughter th{
+  border-top: 0.5px #dddddf solid;
+  border-bottom: 0.5px #dddddf solid;
+  font-weight: normal;
+  background-color: #f4f3f356;
+}
+
+.Daughter tr{
+  border-bottom: 0.5px #dddddf solid;
+}
+
+.StepDaughter{ 
+  width: 16rem;          
+  background-color: white; 
+  color: black;
+  padding-top: 0.1rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: 205px;
+  width: 1540px;
+}
+
+.StepDaughter ul{
+  display: flex;
+  flex-wrap: wrap;
+  position: static;
+}
+
+.StepDaughter li{
+  margin: 5px;
+}
+
+.BookForm{
+  display: flex;
+  width: 900px;
+}
+
+.BookForm input{
+  margin: 20px;
+}
+
+.HeadMoe{
+  width: 100%;
+}
+
+.Body{
+  display: block;
+}
+
+.dashboard-title {
+  font-size: 25px;
+  margin-bottom: 1rem;
+  padding-left: 15px;
+  font-family: 'Century Gothic';
+  border-left: 5px #fff solid;
+}
+
+.bg-white{
+  width: 400px;
+}
+
+.nav-links{
+  width: 250px;
+  color: white !important;
+  text-decoration: none;
+  font-family: 'Century Gothic';
+}
+
+font{
+  margin: 0;
+}
+
+.nav-links.active {
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color: black !important;
+}
+
+#home{
+  font-size: 12px;
+}
+
+#hometo{
+  margin-top: 5px;
+  font-size: 11px;
+  color: #e5e5e5;
+}
+
+#places{
+  font-size: 15px; 
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#adminlink{
+  padding-bottom: 0px;
+  padding-top: 18px;
+}
+
+.BookForm h3{
+  margin: 15px;
+}
+
+input[placeholder="Book Title"]{
+  margin: 15px;
+  border: 5px solid #ccc;
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #444;
+  outline: 0;
+  font-family: 'Century Gothic';
+  font-size: 16px;
+  width: 100%;
+}
+
+input[placeholder="Category"]{
+  margin: 15px;
+  border: 5px solid #ccc;
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #444;
+  outline: 0;
+  font-family: 'Century Gothic';
+  font-size: 16px;
+  width: 100%;
+}
+
+textarea[placeholder="Description"]{
+  margin: 15px;
+  border: 5px solid #ccc;
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #444;
+  outline: 0;
+  font-family: 'Century Gothic';
+  font-size: 16px;
+  width: 100%;
+}
+
+input[placeholder="Price"]{
+  margin: 15px;
+  border: 5px solid #ccc;
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #444;
+  outline: 0;
+  font-family: 'Century Gothic';
+  font-size: 16px;
+  width: 100%;
+}
+
+input[placeholder="Image URL"]{
+  margin: 15px;
+  border: 5px solid #ccc;
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #444;
+  outline: 0;
+  font-family: 'Century Gothic';
+  font-size: 16px;
+  width: 100%;
+}
+
+.BookForm button{
+  background-color: #fff;
+  color: #5db8f5 !important;
+  font-size: 16px;
+  border: 1.5px #5db8f5 solid;
+  border-radius: 5px;
+  margin: 15px;
+  width: 100%;
+}
+
+.BookForm button:hover{
+  background-color: #5db8f5 ;
+  color: #fff !important;
+}
+
+.return-main {
+  margin-top: auto; /* push to bottom */
+}
+
+.card-btn-del{
+  background-color: #fff;
+  border: 1.5px #000000 solid;
+  color: rgb(157, 0, 0);
+  padding: 8px;
+  height: 50px !important;
+  width: 80px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.card-btn-del:hover{
+  background-color: rgb(157, 0, 0);
+  color: #fff;
+}
+
+/* Stat cards */
+.stat-card {
+  border: 0.5px #dddddf solid;
+  border-radius: 5px;
+  background-color: #f4f3f356;
+  padding: 1.5rem;
+  margin: 15px;
+  border-radius: 1rem;
+  width: 60%;
+  height: 150px;
+}
+
+.Chart{
+  padding-top: 60px;
+}
+
+.apexcharts-canvas *:focus {
+  outline: none !important;
+}
+
+.stat-card-big {
+  border: 0.5px #dddddf solid;
+  border-radius: 5px;
+  background-color: #f4f3f356;
+  padding: 1.5rem;
+  margin: 15px;
+  border-radius: 1rem;
+  width: 600px;
+  height: 480px;
+}
+
+
+.stat-label {
+  color: #6b7280; /* gray-600 */
+  font-family: 'Century Gothic';
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: 'Century Gothic';
+}
+
+#forgotpass{
+  margin-top: -13px;
+  margin-bottom: 5px;
+}
+
+#forgotpass a{
+  padding: 0;
+  font-size: 12.5px; 
+  color: #555;
+}
+
+.KO2 form{
+  margin-top: 40px;
+  margin-bottom: 35px;
+}
+
+.KO2 input{
+  margin-right: 15px;
+  margin-bottom: 15px; 
+}
+
+.KO2 textarea{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #444;
+  outline: 0;
+  font-family: 'Century Gothic';
+  font-size: 16px;
+  width: 350px;
+  margin-right: 15px;
+  margin-bottom: 15px; 
+}
+
+.KO2 input[type=text]{
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #444;
+  outline: 0;
+  font-family: 'Century Gothic';
+  font-size: 16px;
+  width: 350px;
+}
+
+.KO2 input[type="number"]{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #444;
+  outline: 0;
+  font-family: 'Century Gothic';
+  font-size: 16px;
+  width: 350px;
+}
+
+
+.KO2 button{
+  font-family: 'Century Gothic';
+  font-size: 16px;
+  width: 350px;
+}
+
+.KO h3{
+  font-family: 'Century Gothic';
+}
+
+.KO2 p{
+  font-family: 'Century Gothic';
+}
+
+.KO a{
+  font-size: 27px;
+  font-family: 'Century Gothic';
+}
+
+.KO Table{
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 35px;
+}
+
+.KO th{
+  font-family: 'Century Gothic';
+}
+
+.KO td{
+  font-family: 'Century Gothic';
+}
+
+.Jobby h1{
+  margin-top: 350px;
+  margin-bottom: 350px;
+}
+
+/* Password field with show/hide toggle */
+.password-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-group .form-control {
+  padding-right: 40px; /* room for the icon so text doesn't run under it */
+}
+
+.password-toggle {
+  position: absolute;
+  right: -20px;
+  top: 25%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  cursor: pointer;
+  line-height: 0; /* keeps the svg from adding extra button height */
+}
+
+.password-toggle2 {
+  position: absolute;
+  right: -20px;
+  top: 35%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  cursor: pointer;
+  line-height: 0; /* keeps the svg from adding extra button height */
+}
+
+.password-toggle3 {
+  position: absolute;
+  right: -30px;
+  top: 30%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  cursor: pointer;
+  line-height: 0; /* keeps the svg from adding extra button height */
+}
+
+.password-toggle:hover {
+  color: #333;
+}
+
+.password-toggle:focus-visible {
+  outline: 2px solid #0d6efd;
+  outline-offset: 2px;
+}
+
 @media(max-width: 945px){
   .FormLog{
      width: 75%;
   }
   .FormSign{
     width: 75%;
+  }
+}
+@media(max-width: 768px){
+  .bashZero{
+    margin-left: 10px;
   }
 }
 @media(max-width: 745px){
@@ -674,11 +1301,6 @@ a[href="/Home"], a[href="/Cart"], a[href="/Shop"]{
     padding-right: 10px;
     border-radius: 5px;
   }
-}
-@media(max-width: 625px){
-   .Body{
-   padding-left: 20%;
-   }  
 }
 @media (max-width: 601px) {
   .footer-container {
@@ -733,6 +1355,14 @@ a[href="/Home"], a[href="/Cart"], a[href="/Shop"]{
     background-color: rgba(223, 222, 222, 0.381);
     padding-left: 10px;
     font-size: 16px;
+  }
+  .bashZero{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(223, 222, 222, 0.51);
+    padding-left: 10px;
+    font-size: 16px;
+    margin-left: 0px;
   }
   .bash{
     display: flex;

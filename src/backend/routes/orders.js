@@ -1,11 +1,8 @@
-import express from 'express';
+import express from "express";
 const router = express.Router();
 
 import Order from "../models/Orders.js";
 import Book from "../models/Book.js";
-
-
-
 
 router.post("/checkout", async (req, res) => {
   try {
@@ -41,18 +38,16 @@ router.post("/checkout", async (req, res) => {
       orders.push(order);
     }
 
-    // return FIRST order id for linking (simple version)
     res.json({
       orderId: orders[0]?._id,
+      orderIds: orders.map((o) => o._id),
       message: "Order created",
     });
-
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Checkout failed" });
   }
 });
-
 
 // GET /api/orders/sales/:sellerId
 // routes/orders.js
@@ -74,9 +69,39 @@ router.get("/sales/:sellerId", async (req, res) => {
   }
 });
 
+// Convert local/international formats (07xx, 7xx, +2547xx) to the 2547xxxxxxxx format M-Pesa requires
+function formatMpesaPhone(rawPhone) {
+  let phone = String(rawPhone || "").replace(/\D/g, "");
+  if (phone.startsWith("0")) {
+    phone = "254" + phone.slice(1);
+  } else if (phone.startsWith("254")) {
+    // already in the right format
+  } else if (phone.length === 9) {
+    phone = "254" + phone;
+  }
+  return phone;
+}
+
 router.post("/stkpush", async (req, res) => {
   try {
-    const { phone, amount, orderId } = req.body;
+    const { phone, amount, orderId, orderIds } = req.body;
+    const targetOrderIds =
+      Array.isArray(orderIds) && orderIds.length
+        ? orderIds
+        : [orderId].filter(Boolean);
+
+    if (!phone || !amount || !targetOrderIds.length) {
+      return res
+        .status(400)
+        .json({ error: "phone, amount and orderId are required" });
+    }
+
+    const formattedPhone = formatMpesaPhone(phone);
+    if (!/^254\d{9}$/.test(formattedPhone)) {
+      return res
+        .status(400)
+        .json({ error: "Invalid phone number. Use format 2547XXXXXXXX." });
+    }
 
     const shortcode = process.env.MPESA_SHORTCODE;
     const passkey = process.env.MPESA_PASSKEY;
@@ -86,20 +111,26 @@ router.post("/stkpush", async (req, res) => {
       .replace(/[-:T.Z]/g, "")
       .slice(0, 14);
 
-    const password = Buffer.from(
-      shortcode + passkey + timestamp
-    ).toString("base64");
+    const password = Buffer.from(shortcode + passkey + timestamp).toString(
+      "base64",
+    );
 
     const auth = Buffer.from(
-      `${process.env.MPESA_CONSUMER_KEY}:${process.env.MPESA_CONSUMER_SECRET}`
+      `${process.env.MPESA_CONSUMER_KEY}:${process.env.MPESA_CONSUMER_SECRET}`,
     ).toString("base64");
 
     const tokenRes = await fetch(
       "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
-      { headers: { Authorization: `Basic ${auth}` } }
+      { headers: { Authorization: `Basic ${auth}` } },
     );
-
     const tokenData = await tokenRes.json();
+
+    if (!tokenData.access_token) {
+      console.error("MPESA TOKEN ERROR:", tokenData);
+      return res
+        .status(502)
+        .json({ error: "Failed to get M-Pesa access token." });
+    }
 
     const stkRes = await fetch(
       "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
@@ -114,23 +145,39 @@ router.post("/stkpush", async (req, res) => {
           Password: password,
           Timestamp: timestamp,
           TransactionType: "CustomerPayBillOnline",
-          Amount: amount,
-          PartyA: phone,
+          Amount: Math.ceil(Number(amount)),
+          PartyA: formattedPhone,
           PartyB: shortcode,
-          PhoneNumber: phone,
+          PhoneNumber: formattedPhone,
           CallBackURL: process.env.MPESA_CALLBACK_URL,
-          AccountReference: orderId,
-          TransactionDesc: "Purchase",
+          // AccountReference is capped at 12 chars by Daraja, so a Mongo ObjectId won't fit
+          AccountReference: "StoryShelf",
+          TransactionDesc: "Book Purchase",
         }),
-      }
+      },
     );
 
     const data = await stkRes.json();
-
     console.log("STK RESPONSE:", data);
 
-    res.json(data);
+    if (data.ResponseCode === "0" && data.CheckoutRequestID) {
+      // Persist the CheckoutRequestID so the callback can find and update these orders
+      await Order.updateMany(
+        { _id: { $in: targetOrderIds } },
+        {
+          $set: {
+            checkoutRequestId: data.CheckoutRequestID,
+            phone: formattedPhone,
+          },
+        },
+      );
+      return res.json({ success: true, ...data });
+    }
 
+    return res.status(400).json({
+      success: false,
+      error: data.errorMessage || "STK Push failed. Please try again.",
+    });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "STK failed" });
@@ -150,7 +197,7 @@ router.get("/purchases/:buyerId", async (req, res) => {
 
     const purchases = await Order.find({
       buyerId,
-      status: "PAID"
+      status: "PAID",
     }).sort({ purchasedAt: -1 });
 
     res.json(Array.isArray(purchases) ? purchases : []);

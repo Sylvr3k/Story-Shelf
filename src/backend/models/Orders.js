@@ -4,7 +4,7 @@ const OrderSchema = new mongoose.Schema({
   bookId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Book",
-    required: true
+    required: true,
   },
 
   title: String,
@@ -13,7 +13,7 @@ const OrderSchema = new mongoose.Schema({
   buyerId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
-    required: true
+    required: true,
   },
   buyerEmail: String,
   buyerName: String,
@@ -21,22 +21,26 @@ const OrderSchema = new mongoose.Schema({
   sellerId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
-    required: true
+    required: true,
   },
   sellerEmail: String,
   sellerName: String,
 
   purchasedAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   status: {
     type: String,
-    default: "PENDING"
+    default: "PENDING",
+  },
+  phone: String,
+  checkoutRequestId: {
+    type: String,
+    index: true,
   },
   mpesaReceipt: String,
   paidAt: Date,
-
 });
 
 // CREATE MODEL
